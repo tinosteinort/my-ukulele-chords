@@ -1,0 +1,11 @@
+{
+  "Name": "C",
+  "FretCount": 5,
+  "StringCount": 4,
+  "FrettedNotes": [
+    {
+      "FretNumber": 3,
+      "StringNumber": 1
+    }
+  ]
+}

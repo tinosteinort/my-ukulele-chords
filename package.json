@@ -1,0 +1,27 @@
+{
+  "name": "my-ukulele-chords",
+  "version": "1.0.0",
+  "description": "My Ukulele Chords",
+  "private": true,
+  "scripts": {
+    "clean": "scripts/clean.sh",
+    "pack": "npx webpack --config \"webpack.config.js\"",
+    "build": "npm run clean && scripts/build.sh && npm run pack",
+    "serve": "npx ws -d \"build\"",
+    "dev": "npm run build && npx concurrently \"npm run pack -- --watch\" \"npm run serve\""
+  },
+  "author": "Tino Steinort",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.0.1",
+    "local-web-server": "^4.2.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.16.0",
+    "webpack-cli": "^4.4.0"
+  },
+  "dependencies": {
+    "purecss": "^2.0.5"
+  }
+}
