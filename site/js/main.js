@@ -1,5 +1,7 @@
 import { chords } from './modules/chords.js'
+import { menu } from './modules/menu.js'
 
+require('../css/menu.css')
 require('../css/main.css')
 
 function chordFilterInput() {
@@ -38,4 +40,5 @@ function main() {
     renderChords()
 }
 
+menu(this, window.document);
 window.addEventListener('load', main);
