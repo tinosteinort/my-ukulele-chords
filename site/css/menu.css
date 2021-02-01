@@ -51,14 +51,15 @@ The content `<div>` is where all your content goes.
     line-height: 1.6em;
 }
 */
-/*
+
 .header {
      margin: 0;
-     color: #333;
+     background-color: #191818;
      text-align: center;
-     padding: 2.5em 2em 0;
+     padding: 1.6em 2em 0;
      border-bottom: 1px solid #eee;
  }
+/*
     .header h1 {
         margin: 0.2em 0;
         font-size: 3em;
@@ -214,13 +215,13 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 */
 @media (min-width: 48em) {
 
-    /*
+    
     .header,
     .content {
         padding-left: 2em;
         padding-right: 2em;
     }
-    */
+    
     
 
     #layout {
