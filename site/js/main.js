@@ -1,43 +1,39 @@
-import { chords } from './modules/chords.js'
 import { menu } from './modules/menu.js'
+import { createOverview } from './modules/overview/overview.js'
+import { createTraining } from './modules/training/training.js'
 
 require('../css/menu.css')
 require('../css/main.css')
 
-function chordFilterInput() {
-    return document.getElementsByClassName('chord-filter')[0];
-}
-
-function chordsDiv() {
-    return document.getElementsByClassName('chords')[0];
-}
-
-function onFilterChange(e) {
-    renderChords(e.target.value);
-}
-function onFocusSelectText() {
-    chordFilterInput().select();
-}
-
-function renderChords(filterValue) {
-    const div = chordsDiv();
-    div.innerHTML = '';
-    chords
-        .filter(chord => filterValue == undefined || chord.name.toLowerCase().startsWith(filterValue.toLowerCase()))
-        .forEach(chord => div.innerHTML += renderChordDiv(chord));
-}
-
-function renderChordDiv(chord) {
-    return `<div class=\"chord pure-u-1 pure-u-sm-1-2 pure-u-md-1-3\">
-        <img src=\"${chord.file}\" alt=\"Chord ${chord.name}\">
-    </div>`;
-}
-
+const content = document.querySelector('.content');
+const trainingMenuItem = document.querySelector('#trainingMenuItem');
+const overviewMenuItem = document.querySelector('#overviewMenuItem');
 
 function main() {
-    chordFilterInput().addEventListener('input', onFilterChange)
-    chordFilterInput().addEventListener('focus', onFocusSelectText)
-    renderChords()
+    
+    const overview = createOverview();
+    const training = createTraining();
+
+    overviewMenuItem.addEventListener('click', (e)=> {
+        e.preventDefault();
+        removeContentComponent(training);
+        setContentComponent(overview);
+    });
+    trainingMenuItem.addEventListener('click', (e)=> {
+        e.preventDefault();
+        removeContentComponent(overview);
+        setContentComponent(training);
+    });
+    setContentComponent(overview);
+}
+
+function setContentComponent(component) {
+    content.appendChild(component);
+}
+function removeContentComponent(component) {
+    if (content.contains(component)) {
+        content.removeChild(component);
+    }
 }
 
 menu(this, window.document);

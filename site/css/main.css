@@ -1,7 +1,7 @@
 @import '~purecss/build/pure-min.css';
 @import '~purecss/build/grids-responsive-min.css';
 
-.chord-filter {
+.chord-input {
     margin: auto;
 }
 
@@ -11,4 +11,8 @@
 
 .chord {
     text-align: center;
+}
+
+.hidden {
+    display: none;
 }
