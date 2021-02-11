@@ -7,11 +7,12 @@
                 <span class="validation-info hidden pure-form-message-inline">Containing unknown Chords</span>
             </div>
             <div class="pure-u-1 pure-u-md-1-3">
-                <label>Duration:</label>
-                <input class="pure-u-23-24" type="range" min="100" max="2000">
+                <label>Speed:</label>
+                <input class="duration-range pure-u-23-24" type="range" min="100" max="3000">
             </div>
         </div>
-        <button id="train" type="button" class="pure-button pure-button-primary">Start</button>
-        <button id="stop" type="button" class="pure-button">Stop</button>
+        <button id="train" type="button" class="pure-button pure-button-primary">Start Training</button>
+        <button id="stop" type="button" class="pure-button" disabled>Stop Training</button>
     </fieldset>
 </form>
+<div class="chord-to-train"></div>
