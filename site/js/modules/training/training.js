@@ -49,7 +49,6 @@ export const createTraining = function() {
     function nextChord(chordNames, index) {
         const currentChordName = chordNames[index];
         const currentChord = chordByName(currentChordName);
-        console.log('name:', currentChordName, 'chord', currentChord);
         chordToTrainDiv.innerHTML = renderChordDiv(currentChord);
         if (trainingRunning) {
             if (index + 1 === chordNames.length) {
