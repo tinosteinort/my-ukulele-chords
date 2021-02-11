@@ -9,8 +9,6 @@ function main {
 function generateChordImages {
     mkdir -p build/chords
 
-    pwd
-
     for chordFile in site/chords/*; do
         filename="$(basename -- "$chordFile")"
         filenameWithoutExtension="${filename%.*}"
